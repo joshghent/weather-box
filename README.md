@@ -1,7 +1,7 @@
 <p align="center">
   <img width="400" src="./images/screenshot.png">
-  <h3 align="center">rescue-box</h3>
-  <p align="center">Update a pinned gist to contain your daily RescueTime stats</p>
+  <h3 align="center">weather-box</h3>
+  <p align="center">Update a pinned gist to contain the weather, wherever you are!</p>
 </p>
 
 ---
@@ -13,9 +13,8 @@
 ### Prep work
 
 1. Create a new public GitHub Gist (https://gist.github.com/)
-1. Create a token with the `gist` scope and copy it. (https://github.com/settings/tokens/new)
-1. Create a RescueTime Account account (https://rescuetime.com)
-1. In your account settings, create a new RescueTime API Key (https://www.rescuetime.com/anapi/manage)
+2. Create a token with the `gist` scope and copy it. (https://github.com/settings/tokens/new)
+3. Get your openweathermap api key from [here](https://home.openweathermap.org/api_keys)
 
 ### Project setup
 
@@ -27,6 +26,6 @@
 3. Go to the repo **Settings > Secrets**
 4. Add the following environment variables:
    - **GH_TOKEN:** The GitHub token generated above.
-   - **RESCUETIME_API_KEY:** The API key for your RescueTime account.
+   - **OPENWEATHERMAP_API_KEY:** The API key for your OpenWeatherMap account.
    - **GIST_ID:** The Gist ID that we got in Step 2
 5. Copy the contents of `.github/workflows/schedule.yml`, then delete the file and commit it. Then recreate the file and paste the contents back in (this is due to forked repos not running actions)

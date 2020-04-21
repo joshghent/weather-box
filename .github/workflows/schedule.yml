@@ -1,15 +1,16 @@
-name: Update gist with RescueTime stats
+name: Update gist with Weather stats
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: "* */6 * * *"
 jobs:
   update-gist:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Update gist
-        uses: joshghent/rescue-box@master
+        uses: joshghent/weather-box@master
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: ${{ secrets.GIST_ID }}
-          RESCUETIME_API_KEY: ${{ secrets.RESCUETIME_API_KEY }}
+          OPENWEATHERMAP_API_KEY: ${{ secrets.OPENWEATHERMAP_API_KEY }}
+          LOCATION: ${{ secrets.LOCATION }}
